@@ -18,7 +18,8 @@ public class EmailApp {
 			
 			
 			if(choice == 1) {
-				email = generateEmailAdress(scanner);
+				email.generateUserInformation(scanner);
+				
 			} else if(choice == 2) {
 				email.changePassword(scanner);
 				
@@ -37,46 +38,6 @@ public class EmailApp {
 	
 	}
 	
-	private static Email generateEmailAdress(Scanner scanner) {
-		
-		
-		System.out.print("Enter your firstname: ");
-		String firstname = scanner.nextLine();
-		
-		System.out.print("Enter your lastname: ");
-		String lastname = scanner.nextLine();
-		
-		System.out.print("What is your department? Press 1 = sales, 2 = development, 3 = accounting, 4 = none: ");
-		int departmentNumber = scanner.nextInt();
-		scanner.nextLine();
-		
-		String department = "";
-
-		switch (departmentNumber) {
-	    case 1:
-	    	department = "sales";
-	        break;
-	    case 2:
-	    	department = "development";
-	        break;
-	    case 3:
-	    	department = "accounting";
-	        break;
-	    case 4:
-	    	department = "none";
-	        break;
-		}
-		
-		Email email = new Email(firstname, lastname, department);
-		
-		System.out.println("\nWelcome " + email.getName() + " to the team!");
-		System.out.println("Your new email adress is: " + email.getEmailAdress());
-		System.out.print("A new password has been generated for you: " + email.getPassword()+ "\n");
-	
-		
-		return email;
-		
-	}
 		
 }
 

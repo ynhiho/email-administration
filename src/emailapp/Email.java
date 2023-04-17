@@ -20,14 +20,44 @@ public class Email {
 		this.lastname = "UserLastname";
 		this.department = "UserDepartment";
 	}
+
 	
-	public Email (String firstname, String lastname, String department) {
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.department = department;
-		allInstances.add(this);
+	public void generateUserInformation(Scanner scanner) {
+		System.out.print("Enter your firstname: ");
+		this.firstname = scanner.nextLine();
+		
+		System.out.print("Enter your lastname: ");
+		this.lastname = scanner.nextLine();
+		
+		System.out.print("What is your department? Press 1 = sales, 2 = development, 3 = accounting, 4 = none: ");
+		int departmentNumber = scanner.nextInt();
+		scanner.nextLine();
+		
+
+		switch (departmentNumber) {
+	    case 1:
+	    	this.department = "sales";
+	        break;
+	    case 2:
+	    	this.department = "development";
+	        break;
+	    case 3:
+	    	this.department = "accounting";
+	        break;
+	    case 4:
+	    	this.department = "none";
+	        break;
+		}
+		
 		generateEmailAdress(firstname, lastname, department);
 		generatePassword();
+		allInstances.add(this);
+
+		System.out.println("\nWelcome " + this.getName() + " to the team!");
+		System.out.println("Your new email adress is: " + this.getEmailAdress());
+		System.out.print("A new password has been generated for you: " + this.getPassword()+ "\n");
+		
+	
 	}
 	
 	private void generateEmailAdress(String firstname, String lastname, String department) {
