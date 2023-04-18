@@ -22,7 +22,8 @@ public class Email {
 	}
 
 	
-	public void generateUserInformation(Scanner scanner) {
+	public void generateUserInformation() {
+		Scanner scanner = new Scanner(System.in);
 		System.out.print("Enter your firstname: ");
 		this.firstname = scanner.nextLine();
 		
@@ -75,7 +76,8 @@ public class Email {
         }
 	}
 	
-	public void changePassword(Scanner scanner) {
+	public void changePassword() {
+		Scanner scanner = new Scanner(System.in);
 		System.out.print("What is your email adress? ");
 		String useremail = scanner.nextLine();
 		
@@ -93,7 +95,8 @@ public class Email {
 		matchedEmail.getPassword() + "\n");
 	}
 	
-	public void displayEmail(Scanner scanner) {
+	public void displayEmail() {
+		Scanner scanner = new Scanner(System.in);
 		System.out.print("What is your firstname? ");
 		String firstname = scanner.nextLine();
 		

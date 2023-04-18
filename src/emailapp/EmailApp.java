@@ -18,13 +18,13 @@ public class EmailApp {
 			
 			
 			if(choice == 1) {
-				email.generateUserInformation(scanner);
+				email.generateUserInformation();
 				
 			} else if(choice == 2) {
-				email.changePassword(scanner);
+				email.changePassword();
 				
 			} else if(choice == 3) {
-				email.displayEmail(scanner);
+				email.displayEmail();
 				
 			} else if(choice == 4) {
 				exit = true;
